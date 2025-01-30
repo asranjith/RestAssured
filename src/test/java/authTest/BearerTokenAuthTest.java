@@ -1,0 +1,16 @@
+package authTest;
+
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+public class BearerTokenAuthTest {
+     @Test
+     public void bearerToken() {
+    	 given()
+    	   .auth().oauth2("eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJsZUN3YUNPai00RXVlbzJkTFFrTmZuLXh2M0F3Nm5ZdWZtS0pINXBFWkNNIn0.eyJleHAiOjE3MzQ2NzY0NjYsImlhdCI6MTczNDY3NTE4MSwianRpIjoiYTU5OWFiMDQtNDdhMy00Y2IzLTk3OTEtYjY2NWExM2YyMDc2IiwiaXNzIjoiaHR0cDovLzQ5LjI0OS4yOC4yMTg6ODE4MC9hdXRoL3JlYWxtcy9uaW56YSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI0ODVlYTJhYi1kY2MzLTQwOGItOTUxZi04NGMwM2JmZDAwMmYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuaW56YS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiYWY3MGJhZDMtMmY0OS00NzJlLTlhZDEtYTQ1MGEyNjcwMTlhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vNDkuMjQ5LjI4LjIxODo4MDkxIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW5pbnphIiwib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiYWY3MGJhZDMtMmY0OS00NzJlLTlhZDEtYTQ1MGEyNjcwMTlhIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJybWd5YW50cmEifQ.eN-Rv-WbKCGcm1ZHSDKMZSRA28x_ysx2sMYIwOV3lxHPj_QS_SKa5PusFRZPxgruJEK8487xsz8yyzDGemzry-ZCQTS5sW27LHn4vfmGA15X_iA9lW7at5gLKZmJbo8JEcAd58P7K3eqgzKDEBwcINj9S7IFCEUIDgK_NkN7WZ9tsMpn6xrwvrjLUtyEJgTKg7_CFLZSjm3pYkc4ueeRfFOb_CpkNQdz96WMSCZhTgub8h3cvRHeIApH7QjXMN_qDN1w-H2N6Yn-Xgp0Zue2z-oLAbRGjhPPZiQEyHI7UvktNRXrUsmptOz9loicw2NetdPrOWBQoPFAID0-VFQWZA")
+    	   .log().all()
+    	 .when()
+    	   .get("http://49.249.28.218:8091/projects")
+    	 .then()
+    	   .log().all(); 
+     }
+}
